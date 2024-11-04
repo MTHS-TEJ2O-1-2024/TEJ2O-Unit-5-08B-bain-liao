@@ -26,6 +26,7 @@ while (true) {
         // move car forwards and backwards
         robotbit.StpCarMove(-10, 48)
         robotbit.StepperTurn(robotbit.Steppers.M1, robotbit.Turns.T1B4)
+        robotbit.StepperTurn(robotbit.Steppers.M2, robotbit.Turns.T1B4)
         basic.showIcon(IconNames.Happy)
     }
 }

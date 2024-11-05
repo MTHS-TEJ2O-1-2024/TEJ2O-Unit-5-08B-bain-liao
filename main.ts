@@ -21,13 +21,15 @@ let objectDistance: number = 0
     }
     if (objectDistance > 10) {
         // move car forwards
+        basic.clearScreen()
         basic.showIcon(IconNames.Yes)
         robotbit.StpCarMove(48, 65)
     } else {
         // move car backwards and turn 90 degrees
         basic.showIcon(IconNames.No)
+        robotbit.StpCarMove(-10, 65)
         robotbit.StepperTurn(robotbit.Steppers.M1, robotbit.Turns.T1B4)
         robotbit.StepperTurn(robotbit.Steppers.M2, robotbit.Turns.T1B4)
-        robotbit.StpCarMove(-10, 65)
+        basic.clearScreen()
         }
     }

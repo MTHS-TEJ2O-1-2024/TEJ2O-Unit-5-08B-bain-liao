@@ -18,18 +18,25 @@ let objectDistance: number = 0
             DigitalPin.P2,
             PingUnit.Centimeters
     )
-    }
+    // if distance is greater than 10
     if (objectDistance > 10) {
         // move car forwards
         basic.clearScreen()
         basic.showIcon(IconNames.Yes)
-        robotbit.StpCarMove(48, 65)
+        robotbit.StpCarMove(10, 48)
     } else {
-        // move car backwards and turn 90 degrees
         basic.showIcon(IconNames.No)
-        robotbit.StpCarMove(-10, 65)
-        robotbit.StepperTurn(robotbit.Steppers.M1, robotbit.Turns.T1B4)
-        robotbit.StepperTurn(robotbit.Steppers.M2, robotbit.Turns.T1B4)
-        basic.clearScreen()
+        robotbit.StpCarMove(0, 0)
+        basic.pause(500)
+
+        // car backing up
+        robotbit.StpCarMove(-10, 48)
+        basic.pause(1000)
+
+        // car turning 90 degrees
+        robotbit.StepperTurn(robotbit.Steppers.M1, robotbit.Turns.T1B0)
+        basic.pause(500)
+        robotbit.StpCarMove(10, 48)
         }
     }
+}

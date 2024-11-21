@@ -11,7 +11,7 @@ let objectDistance: number = 0
 
 // loop forever
     while (true) {
-    if (input.buttonIsPressed(Button.A)) {
+    if (input.buttonIsPressed(Button.A) == true) {
         // find the distance
         objectDistance = sonar.ping(
             DigitalPin.P1,
